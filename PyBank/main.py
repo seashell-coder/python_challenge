@@ -31,7 +31,7 @@ with open(csvpath, 'r') as csvfile:
         total_months +=1
         total_net_profit_losses +=profit_loss
 
-        #calculate the profit change if this is not the header row
+        #calculate the changes in profit/loss over the entire period, I use NONE to make sure this is not the header row
         if previous_profit_loss is not None:
             profit_change = profit_loss - previous_profit_loss
             profit_changes.append(profit_change)
@@ -48,7 +48,7 @@ with open(csvpath, 'r') as csvfile:
         #Update previous_profit_loss for the next iteration
         previous_profit_loss = profit_loss
     
-    #calculate average profit change
+    #calculate average of changes in profit/loss over time
     average_change = sum(profit_changes)/len(profit_changes)
 
 #Print the results

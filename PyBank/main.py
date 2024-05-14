@@ -2,11 +2,11 @@ import csv
 
 #Defining variables for our financial analysis
 total_months = 0
-total_profit_losses = 0
+total_net_profit_losses = 0
 previous_profit_loss = None
 profit_changes = []
 
-#For Greatest increase and Greatest decrese created dictionaries to track the largest increase and decrease in amount
+#For greatest_increase and greatest_decrese created dictionaries to track the largest increase and decrease in amount
 
 greatest_increase = {"date": None, "amount": float("-inf")} #float("-inf") ensures that any positive increase will be considered larger
 greatest_decrease = {"date": None, "amount": float("inf")} #float("inf") ensures that any negative decrease will be considered smaller
@@ -29,7 +29,7 @@ with open(csvpath, 'r') as csvfile:
 
         #add to total_months and total_profit/loss value
         total_months +=1
-        total_profit_losses +=profit_loss
+        total_net_profit_losses +=profit_loss
 
         #calculate the profit change if this is not the header row
         if previous_profit_loss is not None:
@@ -55,7 +55,7 @@ with open(csvpath, 'r') as csvfile:
 print("Financial Analysis")
 print("------------------")
 print(f"Total Months: {total_months}")
-print(f"Total: ${total_profit_losses}")
+print(f"Total: ${total_net_profit_losses}")
 print(f"Average Change: ${average_change:.2f}")
 print(f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})")
 print(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})")
@@ -64,7 +64,7 @@ print(f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_de
 financial_analysis = f"Financial Analysis\n" \
                      f"------------------\n" \
                      f"Total Months: {total_months}\n" \
-                     f"Total: ${total_profit_losses}\n" \
+                     f"Total: ${total_net_profit_losses}\n" \
                      f"Average Change: ${average_change:.2f}\n" \
                      f"Greatest Increase in Profits: {greatest_increase['date']} (${greatest_increase['amount']})\n" \
                      f"Greatest Decrease in Profits: {greatest_decrease['date']} (${greatest_decrease['amount']})\n"

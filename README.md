@@ -7,6 +7,11 @@ In this challenge we are working on two assignments:
 
 In addition, your final script should both print the analysis to the terminal and export a text file with the results.
 
+Note: I researched and used the classwork activities to mimic my code and asked for assistance during office hours from the instructor and TA "Ricardo".
+In PyBank - I used float("inf") to calculated the greatest /lowest value based on this post https://stackoverflow.com/questions/34264710/what-is-the-point-of-floatinf-in-python
+
+
+
 <b> PyBank Instructions </b>
 In this Challenge, we are tasked with creating a Python script to analyze the financial records of your company. We will be given a financial dataset called budget_data.csv. The dataset is composed of two columns: "Date" and "Profit/Losses".
 
